@@ -1,24 +1,172 @@
-body{
-	background:#eee;
-	font-family:Helvetica,Arial;
-	font-size:14px;
+body {
+    background: #eee;
+    font-family: Helvetica, Arial;
+    font-size: 14px;
 }
 
-.clearBoth{
-	clear: both;
+.right {
+    float: right;
 }
+
+.left {
+    float: left;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 
 /*************************************\
 
 		Clicker game
 
 \*************************************/
-/*
-* clicker shop
-*/
 
 
+/* Clicker top */
 
-/*
-*	Clicker gauge
-*/
+section.top {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 2;
+}
+
+section.top .clicker_logo {
+    position: absolute;
+    left: 2%;
+    top: 20%;
+    width: 100px;
+}
+
+section.top .clicker_gauge {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    width: 300px;
+}
+
+section.top .clicker_gauge .clicker_gauge_icon {
+    width: 50px;
+    height: auto;
+}
+
+section.top .clicker_gauge .clicker_gauge_viewer {
+    width: 200px;
+    height: 20px;
+    background-color: chartreuse;
+    position: relative;
+    border-radius: 10px;
+}
+
+section.top .clicker_gauge .clicker_gauge_viewer .clicker_gauge_current {
+    background-color: cadetblue;
+    position: absolute;
+}
+
+section.top .clicker_gauge p {
+    position: absolute;
+    font-size: 15px;
+    top: 20%;
+    right: 0%;
+}
+
+
+/* Clicker shop */
+
+section.clicker_shop {
+    position: absolute;
+    width: 280px;
+    z-index: 2;
+    background: transparent;
+    height: auto;
+    padding: 10px;
+    border-right: solid 2px black;
+    transform: translateY(100px);
+    will-change: transform;
+}
+
+section.clicker_shop .clicker_shop_title {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    height: 50px;
+    padding-top: 18px;
+}
+
+section.clicker_shop h2 {}
+
+.clicker_shop_block {
+    width: 280px;
+    left: 0%;
+    position: absolute;
+}
+
+
+/*.cliker_shop:hover {
+    transform: translate(280px);
+}*/
+
+
+/* Clicker central */
+
+section.clicker_central {
+    position: relative;
+    background-color: cornflowerblue;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    transform: translateY(-100px);
+}
+
+
+/* Clicker ressources */
+
+section.clicker_ressources {
+    position: absolute;
+    background: transparent;
+    width: 230px;
+    right: 0%;
+    z-index: 2;
+    padding: 20px;
+    transform: translateY(100px);
+}
+
+section.clicker_ressources .clicker_ressources_liste li:nth-child(1) {
+    border-top: solid 2px white;
+}
+
+section.clicker_ressources .clicker_ressources_liste li {
+    border-bottom: solid 2px white;
+    padding: 10px;
+}
+
+section.clicker_ressources .clicker_ressources_liste li p {
+    display: inline;
+}
+
+
+/*************************************\
+
+		Media queries
+
+\*************************************/
+
+@media only screen and (max-width:800px) {
+    section.clicker_shop {
+        transform: translateY(440px);
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        border-right: none;
+        padding: 0px;
+    }
+    section.clicker_shop .clicker_shop_title {
+        background: yellow;
+    }
+}
