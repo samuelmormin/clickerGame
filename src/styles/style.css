@@ -9,6 +9,8 @@ body
     margin: 0;
     padding: 0;
 }
+
+
 div.container
 {
     width: 100%;
@@ -156,9 +158,10 @@ div.arrows img.arrowleft
 div.planet
 {
     width: 100%;
+    height: 100%;
     margin-top: 60px;
     position: relative;
-    text-align: center;
+    border-radius: 100%;
 }
 
 div.planet div
@@ -171,8 +174,12 @@ div.planet div
 div.planet img
 {
     width: 45vh;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    transition: opacity 1s;
+    will-change:opacity;
 }
-
 
 /*************************************
 
@@ -184,6 +191,7 @@ div.planet img
 .clickEffect1
 {
     animation: clickEffect1 ease 0.10s;
+    transform-origin:center;
 }
 
 
@@ -344,6 +352,7 @@ ul li p
     margin: 0 auto;
     margin-top: 60px;
     position: relative;
+    bottom: -35vh;
 }
 
 .ratio1
