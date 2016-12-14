@@ -1,7 +1,10 @@
 var planetEarth          = document.querySelector(".planet");
+<<<<<<< HEAD
 var mouseDiv             = document.querySelector("div.mouseClickEffect");
 var mouse                = { x : 0, y : 0 };
 var mouseDivPosition     = { x : 0, y : 0 };
+=======
+>>>>>>> origin/master
 
 
 planetEarth.addEventListener('click', function()
@@ -13,6 +16,7 @@ planetEarth.addEventListener('animationend', function()
 {
     planetEarth.classList.remove('clickEffect1');
 });
+<<<<<<< HEAD
 
 document.addEventListener('mousemove', function(event)
 {
@@ -31,3 +35,5 @@ document.addEventListener('click', function()
     var p = document.createTextNode("+1");
     
 });
+=======
+>>>>>>> origin/master
