@@ -56,7 +56,7 @@ div.arrows img.arrowright
     width:3vw;
     position:absolute;
     top: 50vh;
-    right: -1vw;
+    right: 22vw;
     transform: translate(-50%, -50%);
 }
 
@@ -65,7 +65,7 @@ div.arrows img.arrowleft
     width:3vw;
     position:absolute;
     top: 50vh;
-    left: 1vw;
+    left: 22vw;
     transform: translate(-50%, -50%);
 }
 
@@ -216,7 +216,7 @@ div.planet img
     margin-top: 20px;
     font-size: 24px;
     color: #79ae37;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
 }
 .planetName
 {
@@ -225,7 +225,7 @@ div.planet img
     margin-top: 25px;
     font-size: 16px;
     color: #79ae37;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
 }
 
 /*************************************
@@ -243,7 +243,7 @@ div.planet img
 {
     font-size: 16px;
     color: #ffffff;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
     text-align: center;
     margin: 0 0 10px 20px;
     width: 230px;
@@ -306,7 +306,7 @@ ul li a p
     font-size: 30px;
     width: 100px;
     color: white;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -323,7 +323,7 @@ ul li a p
 {
     font-size: 14px;
     color: white;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
     margin-top: 9px;
 }
 /*************************************
@@ -374,7 +374,7 @@ ul li a p
     right: -35px;
     font-size: 12px;
     color: white;
-    font-family: 'Block Berthold', cursive;
+    font-family: 'Passion One', cursive;
 }
 /*************************************
 
