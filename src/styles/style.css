@@ -24,7 +24,7 @@ div.container
   background-color: #A5A5A5;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 49%;
   transform: translate(-50%, -50%);
   will-change: transform;
   z-index: 10;
@@ -34,10 +34,10 @@ div.container
 
 @keyframes moonOrbit {
   0% {
-      transform: translate(-250px, 0); z-index: 10;}
+      transform: translate(-200px, 0); z-index: 10;}
   10% {z-index: -1;}
-  60% {transform: translate(250px, 0); z-index: -1;}
-  100% {transform: translate(-250px, 0);}
+  60% {transform: translate(200px, 0); z-index: -1;}
+  100% {transform: translate(-200px, 0);}
 }
 
 

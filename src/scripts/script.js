@@ -12,6 +12,6 @@ planetEarth.addEventListener('animationend', function(){
     planetEarth.classList.remove('clickEffect1');
 });
 
-currentPercentage.addEventListener('', function(){
+clicker.global_var.purification_current_percentage.addEventListener('', function(){
 
 });
