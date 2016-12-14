@@ -1,81 +1,136 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
-
-    <title>Clicker Game</title>
-
-    <link rel="stylesheet" href="src/styles/initialiser.css" />
-    <link rel="stylesheet" href="src/styles/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="src/styles/style.css" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Changa+One|Luckiest+Guy" rel="stylesheet">
 </head>
-
 <body>
-
-    <section class="top">
-        <div class="clicker_gauge left">
-            <span class="clicker_gauge_icon left"><i class="fa fa-leaf fa-3x" ></i></span>
-            <div class="clicker_gauge_viewer left">
-                <div class="clicker_gauge_current"></div>
+   
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">Clean The World</h1>
+            <p class="planetName">PLANÈTE TERRE</p>
+        </div>
+        
+        <!-- Store -->
+        <div class="store">
+            <section class="clicker_shop left">
+            <div class="clicker_shop_title">
+                <h2>BOUTIQUE</h2>
             </div>
-            <p class="clicker_gauge_current-pourcentage right">20%</p>
-        </div>
-        <div class="clicker_logo left"><img src="src/" alt="Cliker game name fastclick fast-click click game"></div>
-    </section>
-
-    <div class="clearBoth"></div>
-
-    <section class="clicker_shop left">
-        <div class="clicker_shop_title">
-            <h2>Boutique</h2>
-        </div>
-        <div class="clicker_shop_block">
-            <!-- on dispose une liste des items ici -->
-        </div>
-    </section>
-
-    <section class="clicker_central right">
-        <section class="clicker_slider">
-            <div class="clicker_slider_current"></div>
-            <div class="clicker_slider_old-planet--1"></div>
-            <div class="clicker_slider_controlers">
-                <span class="clicker_slider_controlers_arrow-left">&#8249;</span>
-                <span class="clicker_slider_controlers_arrow-right">&#8250;</span>
+            <div class="clicker_shop_block">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img class="iconStore" src="src/img/gloves.png" alt="">
+                            <p>Gants</p>
+                            <img class="coinIcon" src="src/img/coin50.png" alt="">
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </section>
-
-        <section class="infos"></section>
-    </section>
-
-    <section class="clicker_ressources right">
-        <ul class="clicker_ressources_liste">
-            <li class="clicker_ressources_liste_detritus">
-                <span class="clicker_ressources_liste_detritus-icon"><i class="fa fa-trash fa-2x" ></i></span>
-                <p class="clicker_ressources_liste_detritus-stats">99999999999</p>
-                <p class="clicker_ressources_liste_detritus-name">Déchets</p>
+            </section>
+        </div>
+        
+        <!-- MiddleClikZone -->
+        <div class="clicksCountingZone">
+            <div class="counter">576000</div>
+            <p class="counterDescription">DÉCHETS RÉCOLTÉS</p>
+        
+        <!-- Planet -->
+        <div class="planet">
+            <div><img src="src/img/T_base.png" alt="Heathly Earth" class="earth"></div>
+        </div>
+        
+        <!-- purity Indice -->
+        <div class="purityIndice">
+            <div class="ratio1">
+                INDICE DE PURETÉ
+                <div class="ratio2"></div>
+                <div class="percentage">80%</div>
+            </div>
+        </div>
+        
+        <div class="background">
+            <div class="arrows">
+                <img src="right-arrow.png" alt="arrowright" class="arrowright">
+                <img src="left-arrow.png" alt="arrowleft" class="arrowleft">
+            </div>
+            </div>
+            <div class="moon"></div>
+            <div class='stars'></div>
+            <div class='stars2'></div>
+            <div class='stars3'></div>
+    </div>
+    <div class="rightMenu">
+        <ul>
+            <li>
+                <a href="#">
+                    <img class="iconStore" src="src/img/gloves.png" alt="">
+                    <p>Gants</p>
+                    <img class="coinIcon" src="src/img/coin50.png" alt="">
+                </a>                 
             </li>
-
-            <li class="clicker_ressources_liste_energie">
-                <span class="clicker_ressources_liste_energie-icon"><i class="fa fa-plug fa-2x" ></i></span>
-                <p class="clicker_ressources_liste_energie-stat">400</p>
-                <p class="clicker_ressources_liste_detritus-name">Energie</p>
+            <li>
+                <a href="#">
+                    <img class="iconStore" src="src/img/gloves.png" alt="">
+                    <p>Gants</p>
+                    <img class="coinIcon" src="src/img/coin50.png" alt="">
+                </a>                 
             </li>
-
-            <li class="clicker_ressources_liste_money">
-                <span class="clicker_ressources_liste_money-icon"><i class="fa fa-money fa-2x" ></i></span>
-                <p class="clicker_ressources_liste_money-stat">132</p>
-                <span class="clicker_ressources_liste_money-currency"><i class="fa fa-usd fa-2x" ></i></span>
-                <p class="clicker_ressources_liste_detritus-name">Pièces</p>
-
-            </li>
-        </ul>
-    </section>
-
-    <script src="src/scripts/jquery-2.2.1.min.js"></script>
-    <script type='application/javascript' src='src/scripts/fastclick.js'></script>
-    <script src="src/scripts/main.js"></script>
+        </ul>   
+    </div>
+    <!--
+    <div class="planet">
+        <div><img src="T_base.png" alt="Heathly Earth" class="earth"></div>
+    </div>
+    -->
+    
+    <script src="src/scripts/script.js"></script>
 </body>
-
 </html>
