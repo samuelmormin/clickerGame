@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+
+    <title>Clicker Game</title>
+
+    <link rel="stylesheet" href="src/styles/initialiser.css" />
+    <link rel="stylesheet" href="src/styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="src/styles/style.css" />
+</head>
+
+<body>
+
+    <section class="top">
+        <div class="clicker_gauge left">
+            <span class="clicker_gauge_icon left"><i class="fa fa-leaf fa-3x" ></i></span>
+            <div class="clicker_gauge_viewer left">
+                <div class="clicker_gauge_current"></div>
+            </div>
+            <p class="clicker_gauge_current-pourcentage right">20%</p>
+        </div>
+        <div class="clicker_logo left"><img src="src/" alt="Cliker game name fastclick fast-click click game"></div>
+    </section>
+
+    <div class="clearBoth"></div>
+
+    <section class="clicker_shop left">
+        <div class="clicker_shop_title">
+            <h2>Boutique</h2>
+        </div>
+        <div class="clicker_shop_block">
+            <!-- on dispose une liste des items ici -->
+        </div>
+    </section>
+
+    <section class="clicker_central right">
+        <section class="clicker_slider">
+            <div class="clicker_slider_current"></div>
+            <div class="clicker_slider_old-planet--1"></div>
+            <div class="clicker_slider_controlers">
+                <span class="clicker_slider_controlers_arrow-left">&#8249;</span>
+                <span class="clicker_slider_controlers_arrow-right">&#8250;</span>
+            </div>
+        </section>
+
+        <section class="infos"></section>
+    </section>
+
+    <section class="clicker_ressources right">
+        <ul class="clicker_ressources_liste">
+            <li class="clicker_ressources_liste_detritus">
+                <span class="clicker_ressources_liste_detritus-icon"><i class="fa fa-trash fa-2x" ></i></span>
+                <p class="clicker_ressources_liste_detritus-stats">99999999999</p>
+                <p class="clicker_ressources_liste_detritus-name">Déchets</p>
+            </li>
+
+            <li class="clicker_ressources_liste_energie">
+                <span class="clicker_ressources_liste_energie-icon"><i class="fa fa-plug fa-2x" ></i></span>
+                <p class="clicker_ressources_liste_energie-stat">400</p>
+                <p class="clicker_ressources_liste_detritus-name">Energie</p>
+            </li>
+
+            <li class="clicker_ressources_liste_money">
+                <span class="clicker_ressources_liste_money-icon"><i class="fa fa-money fa-2x" ></i></span>
+                <p class="clicker_ressources_liste_money-stat">132</p>
+                <span class="clicker_ressources_liste_money-currency"><i class="fa fa-usd fa-2x" ></i></span>
+                <p class="clicker_ressources_liste_detritus-name">Pièces</p>
+
+            </li>
+        </ul>
+    </section>
+
+    <script src="src/scripts/jquery-2.2.1.min.js"></script>
+    <script type='application/javascript' src='src/scripts/fastclick.js'></script>
+    <script src="src/scripts/main.js"></script>
+</body>
+
+</html>
