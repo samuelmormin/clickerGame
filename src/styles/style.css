@@ -368,10 +368,9 @@ ul li p
     left: 0;
     border-radius: 10px;
     background: #79ae37;
-    opacity: 0.5;
     will-change:transform;
     transform-origin: center;
-    transform: scaleX(1);
+    transform: scaleX(0);
 }
 
 .ratio1 p
