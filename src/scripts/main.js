@@ -7,7 +7,7 @@ clicker.ressources.planet_current = document.querySelector(".planet"); // planet
 clicker.ressources.detritus_result = document.querySelector(".counter"); // counter of detritus
 // clicker.ressources.detritus_click = document.querySelector(".counter");
 // clicker.ressources.detritus_button = document.querySelector(".ditritus-value");
-// clicker.ressources.money = document.querySelector(".money");
+clicker.ressources.money = document.querySelector(".incrementingCoin");
 clicker.ressources.gauge = document.querySelector(".ratio2");
 clicker.ressources.gauge_pourcent = document.querySelector(".percentage");
 // clicker.ressources.energie_click = document.querySelector(".click-energie-value");
@@ -190,10 +190,10 @@ console.log(clicker);
 clicker.ressources.planet_current.addEventListener("click", function(){
 	clicker.global_var.detritus += clicker.global_var.detritus_click_result;
     console.log(	clicker.global_var.detritus);
-	// clicker.global_var.money = clicker.global_var.money + parseFloat(clicker.global_var.detritus_click_result/10);
+	clicker.global_var.money = clicker.global_var.money + parseFloat(clicker.global_var.detritus_click_result/10);
 	clicker.global_var.purification_current = clicker.global_var.purification_current + parseFloat(clicker.global_var.detritus_click_result/2);//10 detritus for 1 purification
 	clicker.ressources.detritus_result.innerHTML = clicker.global_var.detritus;
-	// clicker.ressources.money.innerHTML = parseInt(clicker.global_var.money);
+	clicker.ressources.money.innerHTML = parseInt(clicker.global_var.money);
 	purificationChecker();
 });
 
@@ -207,5 +207,6 @@ function purificationChecker(){
 		clicker.global_var.purification *= clicker.global_var.coefficient_purification;
 		clicker.global_var.purification_current = 0;
 		clicker.ressources.gauge_pourcent.innerHTML = 0 + " %";
+		clicker.ressources.gauge.style = "transform: scaleX(0)";
 	}
 }
