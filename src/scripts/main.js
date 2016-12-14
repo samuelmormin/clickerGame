@@ -16,13 +16,15 @@ clicker.ressources.gauge_pourcent = document.querySelector(".percentage");
 // clicker.ressources.detritus_auto = document.querySelector(".ditritus-auto");
 // clicker.ressources.detritus_auto_value = document.querySelector(".click-detritus-auto-value");
 // clicker.ressources.clicker_level = document.querySelector(".cliker-level");
+clicker.ressources.planet_images = document.querySelectorAll(".planet_images");
 
 //Global variables
 clicker.global_var.current_level = 1; // start level
 clicker.global_var.coeficient_price = 2; // coefficient for price
 clicker.global_var.coefficient_purification = 1.2; // coefficient of purification for each level
 clicker.global_var.detritus = 0; //number of detritus collected
-clicker.global_var.detritus_click_result = 1; //number of detritus collected per click
+clicker.global_var.detritus_click_result = 10; //number of detritus collected per click
+clicker.global_var.current_image = 5; // current image of the planet
 clicker.global_var.money_convert_detritus = 10; //detritus convertor rate
 clicker.global_var.money = 0; //Indicator of your money
 clicker.global_var.purification = 500; // purification level 1
@@ -186,11 +188,11 @@ clicker.global_var.detritus_auto = //list of items to get detritus auto
 		 available: 0}];
 
 console.log(clicker);
+console.log(clicker.ressources.planet_images);
 
 // incrementation of detritus
 clicker.ressources.planet_current.addEventListener("click", function(){
 	clicker.global_var.detritus += clicker.global_var.detritus_click_result;
-    console.log(	clicker.global_var.detritus);
 	clicker.global_var.money = clicker.global_var.money + parseFloat(clicker.global_var.detritus_click_result/10);
 	clicker.global_var.purification_current = clicker.global_var.purification_current + parseFloat(clicker.global_var.detritus_click_result/2);//10 detritus for 1 purification
 	clicker.ressources.detritus_result.innerHTML = clicker.global_var.detritus;
@@ -200,16 +202,47 @@ clicker.ressources.planet_current.addEventListener("click", function(){
 
 function purificationChecker(){
 	clicker.global_var.purification_current_percentage = parseInt(parseFloat(clicker.global_var.purification_current/clicker.global_var.purification*100));
+	console.log(clicker.global_var.purification_current_percentage);
 	clicker.ressources.gauge_pourcent.innerHTML = clicker.global_var.purification_current_percentage + " %";
 	clicker.ressources.gauge.style = "transform: scaleX(" + (clicker.global_var.purification_current/clicker.global_var.purification*100)/100 + ")";
+	planetImagesChange();
 	if(clicker.global_var.purification_current >= clicker.global_var.purification){
 		clicker.global_var.current_level++;
 		alert("vous avez réussit le " + (clicker.global_var.current_level - 1) + " !!!! Aller au niveau " + clicker.global_var.current_level);
-		clicker.ressources.clicker_level.innerHTML = clicker.global_var.current_level;
+		// clicker.ressources.clicker_level.innerHTML = clicker.global_var.current_level;
 		clicker.global_var.purification *= clicker.global_var.coefficient_purification;
 		clicker.global_var.purification_current = 0;
 		clicker.global_var.purification_current_percentage = 0;
 		clicker.ressources.gauge_pourcent.innerHTML = clicker.global_var.purification_current_percentage + " %";
 		clicker.ressources.gauge.style = "transform: scaleX(0)";
+		initialisePlanetImage();
 	}
+}
+
+function planetImagesChange(){
+	if ((clicker.global_var.purification_current_percentage > 17)&&(clicker.global_var.current_image == 5)) {
+		clicker.ressources.planet_images[clicker.global_var.current_image].style = "opacity: 0";
+		clicker.global_var.current_image--;
+	}else if ((clicker.global_var.purification_current_percentage > 34)&&(clicker.global_var.current_image == 4)) {
+		clicker.ressources.planet_images[clicker.global_var.current_image].style = "opacity: 0";
+		clicker.global_var.current_image--;
+	}else if ((clicker.global_var.purification_current_percentage > 51)&&(clicker.global_var.current_image == 3)) {
+		clicker.ressources.planet_images[clicker.global_var.current_image].style = "opacity: 0";
+		clicker.global_var.current_image--;
+	}else if ((clicker.global_var.purification_current_percentage > 68)&&(clicker.global_var.current_image == 2)) {
+		clicker.ressources.planet_images[clicker.global_var.current_image].style = "opacity: 0";
+		clicker.global_var.current_image--;
+	}else if ((clicker.global_var.purification_current_percentage > 85)&&(clicker.global_var.current_image == 1)) {
+		clicker.ressources.planet_images[clicker.global_var.current_image].style = "opacity: 0";
+		clicker.global_var.current_image--;
+	}
+}
+
+function initialisePlanetImage(){
+	var lengthTab = clicker.ressources.planet_images.length;
+	for (var i = 0; i < lengthTab; i++) {
+		clicker.ressources.planet_images[i].style = "opacity:1";
+	}
+	clicker.global_var.current_image = 5;
+	clicker.ressources.planet_images = document.querySelectorAll(".planet_images");
 }
