@@ -285,7 +285,7 @@ ul li p
 }
 .iconStore
 {
-    margin: 0 10px;
+    margin: 3px 0 0 0;
 }
 .coinIcon
 {
@@ -413,4 +413,22 @@ ul li p
     height: 500px;
     display: inline-block;
     vertical-align: top;
+}
+.rightMenu ul li a .incrementingNumber
+{
+    font-size: 16px;
+    color: yellow;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+.rightMenu ul li a .incrementingText
+{
+    font-size: 10px;
+    color: #ffffff;
+    margin-right: 5px;
+    padding-top: 15px;
+}
+.rightMenu ul
+{
+    margin: -10px;
 }
