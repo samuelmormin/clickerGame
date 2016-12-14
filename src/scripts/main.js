@@ -3,13 +3,13 @@ clicker.ressources = {};
 clicker.global_var = {};
 
 //Ressources
-clicker.ressources.planet_current = document.querySelector(".planet");
-clicker.ressources.detritus_result = document.querySelector(".counter");
-clicker.ressources.detritus_click = document.querySelector(".counter");
+clicker.ressources.planet_current = document.querySelector(".planet"); // planet
+clicker.ressources.detritus_result = document.querySelector(".counter"); // counter of detritus
+// clicker.ressources.detritus_click = document.querySelector(".counter");
 // clicker.ressources.detritus_button = document.querySelector(".ditritus-value");
 // clicker.ressources.money = document.querySelector(".money");
-// clicker.ressources.gauge = document.querySelector(".gauge-level");
-// clicker.ressources.gauge_pourcent = document.querySelector(".gauge-pourcent");
+clicker.ressources.gauge = document.querySelector(".ratio2");
+clicker.ressources.gauge_pourcent = document.querySelector(".percentage");
 // clicker.ressources.energie_click = document.querySelector(".click-energie-value");
 // clicker.ressources.energie_button = document.querySelector(".energie-value");
 // clicker.ressources.energie_total = document.querySelector(".energie-total");
@@ -19,13 +19,15 @@ clicker.ressources.detritus_click = document.querySelector(".counter");
 
 //Global variables
 clicker.global_var.current_level = 1; // start level
+clicker.global_var.coeficient_price = 2; // coefficient for price
+clicker.global_var.coefficient_purification = 1.2; // coefficient of purification for each level
 clicker.global_var.detritus = 0; //number of detritus collected
 clicker.global_var.detritus_click_result = 1; //number of detritus collected per click
 clicker.global_var.money_convert_detritus = 10; //detritus convertor rate
 clicker.global_var.money = 0; //Indicator of your money
 clicker.global_var.purification = 500; // purification level 1
 clicker.global_var.purification_current = 0; //our purification currently
-// clicker.global_var.energie = clicker.ressources.energie_click.value;
+//clicker.global_var.energie = clicker.ressources.energie_click.value;
 clicker.global_var.energie_total = 0; //number of energie total
 clicker.global_var.energie_per_sec = 0; //energie per second
 clicker.global_var.purify_per_sec = 0; //purification per second
@@ -189,8 +191,21 @@ clicker.ressources.planet_current.addEventListener("click", function(){
 	clicker.global_var.detritus += clicker.global_var.detritus_click_result;
     console.log(	clicker.global_var.detritus);
 	// clicker.global_var.money = clicker.global_var.money + parseFloat(clicker.global_var.detritus_click_result/10);
-	// clicker.global_var.purification_current = clicker.global_var.purification_current + parseFloat(clicker.global_var.detritus_click_result/2);//10 detritus for 1 purification
+	clicker.global_var.purification_current = clicker.global_var.purification_current + parseFloat(clicker.global_var.detritus_click_result/2);//10 detritus for 1 purification
 	clicker.ressources.detritus_result.innerHTML = clicker.global_var.detritus;
 	// clicker.ressources.money.innerHTML = parseInt(clicker.global_var.money);
-	// purificationChecker();
+	purificationChecker();
 });
+
+function purificationChecker(){
+	clicker.ressources.gauge_pourcent.innerHTML = parseInt(parseFloat(clicker.global_var.purification_current/clicker.global_var.purification*100)) + " %";
+	clicker.ressources.gauge.style = "transform: scaleX(" + (clicker.global_var.purification_current/clicker.global_var.purification*100)/100 + ")";
+	if(clicker.global_var.purification_current >= clicker.global_var.purification){
+		clicker.global_var.current_level++;
+		alert("vous avez réussit le " + (clicker.global_var.current_level - 1) + " !!!! Aller au niveau " + clicker.global_var.current_level);
+		clicker.ressources.clicker_level.innerHTML = clicker.global_var.current_level;
+		clicker.global_var.purification *= clicker.global_var.coefficient_purification;
+		clicker.global_var.purification_current = 0;
+		clicker.ressources.gauge_pourcent.innerHTML = 0 + " %";
+	}
+}
