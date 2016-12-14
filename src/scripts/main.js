@@ -27,6 +27,7 @@ clicker.global_var.money_convert_detritus = 10; //detritus convertor rate
 clicker.global_var.money = 0; //Indicator of your money
 clicker.global_var.purification = 500; // purification level 1
 clicker.global_var.purification_current = 0; //our purification currently
+clicker.global_var.purification_current_percentage = 0
 //clicker.global_var.energie = clicker.ressources.energie_click.value;
 clicker.global_var.energie_total = 0; //number of energie total
 clicker.global_var.energie_per_sec = 0; //energie per second
@@ -198,7 +199,8 @@ clicker.ressources.planet_current.addEventListener("click", function(){
 });
 
 function purificationChecker(){
-	clicker.ressources.gauge_pourcent.innerHTML = parseInt(parseFloat(clicker.global_var.purification_current/clicker.global_var.purification*100)) + " %";
+	clicker.global_var.purification_current_percentage = parseInt(parseFloat(clicker.global_var.purification_current/clicker.global_var.purification*100));
+	clicker.ressources.gauge_pourcent.innerHTML = clicker.global_var.purification_current_percentage + " %";
 	clicker.ressources.gauge.style = "transform: scaleX(" + (clicker.global_var.purification_current/clicker.global_var.purification*100)/100 + ")";
 	if(clicker.global_var.purification_current >= clicker.global_var.purification){
 		clicker.global_var.current_level++;
@@ -206,7 +208,8 @@ function purificationChecker(){
 		clicker.ressources.clicker_level.innerHTML = clicker.global_var.current_level;
 		clicker.global_var.purification *= clicker.global_var.coefficient_purification;
 		clicker.global_var.purification_current = 0;
-		clicker.ressources.gauge_pourcent.innerHTML = 0 + " %";
+		clicker.global_var.purification_current_percentage = 0;
+		clicker.ressources.gauge_pourcent.innerHTML = clicker.global_var.purification_current_percentage + " %";
 		clicker.ressources.gauge.style = "transform: scaleX(0)";
 	}
 }
