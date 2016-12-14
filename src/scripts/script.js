@@ -1,11 +1,10 @@
+var body                 = document.querySelector("body");
 var planetEarth          = document.querySelector(".planet");
-<<<<<<< HEAD
 var mouseDiv             = document.querySelector("div.mouseClickEffect");
 var mouse                = { x : 0, y : 0 };
-var mouseDivPosition     = { x : 0, y : 0 };
-=======
->>>>>>> origin/master
+var mouseDivPosition      = { x : 0, y : 0 };
 
+console.log(body);
 
 planetEarth.addEventListener('click', function()
 {
@@ -16,24 +15,20 @@ planetEarth.addEventListener('animationend', function()
 {
     planetEarth.classList.remove('clickEffect1');
 });
-<<<<<<< HEAD
 
-document.addEventListener('mousemove', function(event)
+body.addEventListener('mousemove', function(event)
 {
     mouse.x                 = event.clientX;
     mouse.y                 = event.clientY;
     mouseDivPosition.x      = mouse.x + 10;
     mouseDivPosition.y      = mouse.y - 10;
-    mouseDiv.style.left     =  mouseDivPosition.x + "px";
-    mouseDiv.style.top      =  mouseDivPosition.y + "px";
+    mouseDiv.style.left     = mouseDivPosition.x + "px";
+    mouseDiv.style.top      = mouseDivPosition.y + "px";
 });
-
 
 document.addEventListener('click', function()
 {
     var element = document.createElement("P");
     var p = document.createTextNode("+1");
-    
+
 });
-=======
->>>>>>> origin/master
