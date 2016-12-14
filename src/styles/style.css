@@ -9,6 +9,8 @@ body
     margin: 0;
     padding: 0;
 }
+
+
 div.container
 {
     width: 100%;
@@ -33,8 +35,8 @@ div.container
 @keyframes moonOrbit {
   0% {
       transform: translate(-250px, 0); z-index: 10;}
-  20% {z-index: -1;}
-  50% {transform: translate(250px, 0);}
+  10% {z-index: -1;}
+  60% {transform: translate(250px, 0); z-index: -1;}
   100% {transform: translate(-250px, 0);}
 }
 
@@ -47,7 +49,7 @@ div.container
 *********************************************/
 .background
 {
-    z-index: -1;
+    z-index: -5;
     position: relative;
 }
 
@@ -156,9 +158,10 @@ div.arrows img.arrowleft
 div.planet
 {
     width: 100%;
+    height: 100%;
     margin-top: 60px;
     position: relative;
-    text-align: center;
+    border-radius: 100%;
 }
 
 div.planet div
@@ -171,8 +174,12 @@ div.planet div
 div.planet img
 {
     width: 45vh;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    transition: opacity 1s;
+    will-change:opacity;
 }
-
 
 /*************************************
 
@@ -184,6 +191,7 @@ div.planet img
 .clickEffect1
 {
     animation: clickEffect1 ease 0.10s;
+    transform-origin:center;
 }
 
 
@@ -266,7 +274,13 @@ ul li
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
 }
-ul li a p
+
+ul li:hover
+{
+    cursor:pointer;
+}
+
+ul li p
 {
     font-size: 12px;
     color: #ffffff;
@@ -279,12 +293,12 @@ ul li a p
 }
 .iconStore
 {
-    margin: 0 10px;
+    margin: 3px 0 0 0;
 }
 .coinIcon
 {
     position: absolute;
-    right: 10px;
+    right: 3px;
     top: 3px;
 }
 /*************************************
@@ -331,12 +345,16 @@ ul li a p
         purityIndice
 
 *************************************/
+
 .purityIndice
 {
     width: 250px;
     margin: 0 auto;
     margin-top: 60px;
+    position: relative;
+    bottom: -35vh;
 }
+
 .ratio1
 {
     position: relative;
@@ -344,37 +362,54 @@ ul li a p
     height: 15px;
     border: 1px solid #ffffff;
     border-radius: 10px;
-    background: #0e192b;
     opacity: 0.8;
     color: white;
     font-size: 10px;
     text-align: center;
 }
-.ratio1:before
-{
-    position: absolute;
-    top: -10px;
-    left: -80px;
-    content:url(src/img/purityleaf.png);
-}
+
 .ratio2
 {
     position: absolute;
-    width: 200px;
-    height: 15px;
-    top: 0px;
-    left: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     border-radius: 10px;
     background: #79ae37;
+    will-change:transform;
+    transform-origin: center;
+    transform: scaleX(0);
 }
+
+.ratio1 p
+{
+    position: absolute;
+    left: 50%;
+    top:1vh;
+    transform: translate(-50%);
+}
+
 .percentage
 {
     position: absolute;
-    top: 4px;
-    right: -35px;
+    top: 3px;
+    right: 50%;
+    transform: translateX(50%);
     font-size: 12px;
     color: white;
     font-family: 'Passion One', cursive;
+}
+
+.imgleaf
+{
+    position: absolute;
+    width: 4%;
+    /*top: 4.5vh;
+    left:50%;
+    transform: translate(-50%);*/
+    top:2.75vh;
+    right: 9vh;
 }
 /*************************************
 
@@ -387,4 +422,22 @@ ul li a p
     height: 500px;
     display: inline-block;
     vertical-align: top;
+}
+.rightMenu ul li a .incrementingNumber
+{
+    font-size: 16px;
+    color: yellow;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+.rightMenu ul li a .incrementingText
+{
+    font-size: 10px;
+    color: #ffffff;
+    margin-right: 5px;
+    padding-top: 15px;
+}
+.rightMenu ul
+{
+    margin: -10px;
 }
